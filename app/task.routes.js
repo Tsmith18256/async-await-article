@@ -8,7 +8,7 @@ let taskController = require('./task.controller');
  * @api {get} /api/tasks/ Get all tasks
  * @apiName GetAllTasks
  */
-// router.get('/', taskController.readAll);
+router.get('/', taskController.readAll);
 
 /**
  * @api {post} /api/tasks/ Create a new task

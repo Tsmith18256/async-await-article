@@ -13,3 +13,13 @@ exports.create = (req, res) => {
     }
   });
 };
+
+exports.readAll = (req, res) => {
+  Task.find({}, (err, tasks) => {
+    if (err) {
+      res.status(500).json({ error: err });
+    } else {
+      res.json({ tasks: tasks });
+    }
+  });
+};
