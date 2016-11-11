@@ -35,3 +35,15 @@ exports.readAll = (req, res) => {
     }
   });
 };
+
+exports.update = (req, res) => {
+  Task.findByIdAndUpdate(req.params.taskId, req.body, { new: true }, (err, task) => {
+    if (err) {
+      res.status(500).json({ error: err });
+    } else if (!task) {
+      res.status(400).json({ error: 'No task with the given ID' });
+    } else {
+      res.json({ task: task });
+    }
+  });
+};

@@ -39,7 +39,7 @@ router.get('/:taskId', taskController.read);
  * @apiParam {String}   [dueDate]           A parsable date string for the due date of this task.
  * @apiParam {Boolean}  [completed=false]   Whether or not the task has been completed.
  */
-// router.put('/:taskId', taskController.update);
+router.put('/:taskId', taskController.update);
 
 /**
  * @api {delete} /api/tasks/:taskId Delete a task
