@@ -47,6 +47,6 @@ router.put('/:taskId', taskController.update);
  *
  * @apiParam {String} taskId  The ID of the task to delete.
  */
-// router.delete('/:taskId', taskController.delete);
+router.delete('/:taskId', taskController.delete);
 
 module.exports = router;

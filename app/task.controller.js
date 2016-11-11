@@ -14,6 +14,18 @@ exports.create = (req, res) => {
   });
 };
 
+exports.delete = (req, res) => {
+  Task.findByIdAndRemove(req.params.taskId, (err, task) => {
+    if (err) {
+      res.status(500).json({ error: err });
+    } else if (!task) {
+      res.status(400).json({ error: 'No task with the given ID' });
+    } else {
+      res.json({ task: task });
+    }
+  });
+};
+
 exports.read = (req, res) => {
   Task.findById(req.params.taskId, (err, task) => {
     if (err) {
