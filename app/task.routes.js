@@ -27,7 +27,7 @@ router.post('/', taskController.create);
  *
  * @apiParam {String} taskId  The ID of the task to get.
  */
-// router.get('/:taskId', taskController.read);
+router.get('/:taskId', taskController.read);
 
 /**
  * @api {put} /api/tasks/:taskId Update a task
